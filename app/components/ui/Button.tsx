@@ -1,64 +1,65 @@
-import Link from "next/link";
-import clsx from "clsx";
-import { ReactNode } from "react";
+import * as React from "react";
+import { Slot } from "@radix-ui/react-slot";
+import { cva, type VariantProps } from "class-variance-authority";
 
-type ButtonProps = {
-  children: ReactNode;
-  href?: string;
-  onClick?: () => void;
-  variant?: "primary" | "secondary" | "outline";
-  size?: "sm" | "md" | "lg";
-  className?: string;
-};
+import { cn } from "@/app/lib/utils";
 
-export default function Button({
-  children,
-  href,
-  onClick,
-  variant = "primary",
-  size = "md",
-  className,
-}: ButtonProps) {
-  const base =
-    "inline-flex items-center justify-center rounded-xl font-semibold transition-all duration-300";
+const buttonVariants = cva(
+  "inline-flex items-center justify-center rounded-xl font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 disabled:pointer-events-none disabled:opacity-50 hover:-translate-y-0.5",
+  {
+    variants: {
+      variant: {
+        primary:
+          "bg-cyan-400 text-slate-950 hover:bg-cyan-300 shadow-lg hover:shadow-cyan-500/25",
 
-  const variants = {
-    primary:
-      "bg-cyan-400 text-slate-950 hover:bg-cyan-300 shadow-lg hover:shadow-cyan-500/30",
+        secondary:
+          "bg-slate-800 text-white hover:bg-slate-700",
 
-    secondary:
-      "bg-slate-800 text-white hover:bg-slate-700",
+        outline:
+          "border border-slate-700 text-white hover:border-cyan-400 hover:text-cyan-400",
+      },
 
-    outline:
-      "border border-slate-700 text-white hover:border-cyan-400 hover:text-cyan-400",
-  };
+      size: {
+        sm: "h-9 px-4 text-sm",
 
-  const sizes = {
-    sm: "px-4 py-2 text-sm",
+        md: "h-11 px-6",
 
-    md: "px-6 py-3",
+        lg: "h-12 px-8 text-lg",
+      },
+    },
 
-    lg: "px-8 py-4 text-lg",
-  };
-
-  const styles = clsx(
-    base,
-    variants[variant],
-    sizes[size],
-    className
-  );
-
-  if (href) {
-    return (
-      <Link href={href} className={styles}>
-        {children}
-      </Link>
-    );
+    defaultVariants: {
+      variant: "primary",
+      size: "md",
+    },
   }
+);
+
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
+}
+
+export function Button({
+  className,
+  variant,
+  size,
+  asChild = false,
+  ...props
+}: ButtonProps) {
+  const Comp = asChild ? Slot : "button";
 
   return (
-    <button onClick={onClick} className={styles}>
-      {children}
-    </button>
+    <Comp
+      className={cn(
+        buttonVariants({
+          variant,
+          size,
+        }),
+        className
+      )}
+      {...props}
+    />
   );
 }
