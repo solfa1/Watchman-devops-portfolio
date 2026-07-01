@@ -1,17 +1,11 @@
-import { Button } from "@/app/components/ui/Button";
+import Navbar from "./components/layout/Navbar";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-slate-950 gap-6">
-      <Button>Primary</Button>
+    <>
+      <Navbar />
 
-      <Button variant="secondary">
-        Secondary
-      </Button>
-
-      <Button variant="outline">
-        Outline
-      </Button>
-    </main>
+      <main className="min-h-[200vh] bg-slate-950" />
+    </>
   );
 }

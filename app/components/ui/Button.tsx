@@ -41,7 +41,7 @@ export interface ButtonProps
   asChild?: boolean;
 }
 
-export function Button({
+export default function Button({
   className,
   variant,
   size,
