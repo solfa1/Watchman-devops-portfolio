@@ -10,7 +10,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-cyan-400 text-slate-950 hover:bg-cyan-300 shadow-lg hover:shadow-cyan-500/25",
+          "bg-cyan-400 text-slate-950 shadow-lg hover:bg-cyan-300 hover:shadow-cyan-500/25",
 
         secondary:
           "bg-slate-800 text-white hover:bg-slate-700",
@@ -46,20 +46,17 @@ export default function Button({
   variant,
   size,
   asChild = false,
+  children,
   ...props
 }: ButtonProps) {
   const Comp = asChild ? Slot : "button";
 
   return (
     <Comp
-      className={cn(
-        buttonVariants({
-          variant,
-          size,
-        }),
-        className
-      )}
+      className={cn(buttonVariants({ variant, size }), className)}
       {...props}
-    />
+    >
+      {children}
+    </Comp>
   );
 }
