@@ -1,6 +1,7 @@
 "use client";
 
 import { Download, ArrowRight } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 import Button from "../ui/Button";
 import Container from "../ui/Container";
 
@@ -17,7 +18,7 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-slate-950 py-24 lg:py-32">
       {/* Background Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.08),transparent_45%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.08),transparent_45%)]" />
 
       <Container>
         <div className="grid items-center gap-16 lg:grid-cols-2">
@@ -61,15 +62,16 @@ export default function Hero() {
             <div className="mt-12 flex flex-wrap gap-4">
               <Button>
                 View Projects
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Button>
 
               <Button variant="outline">
-                <Download className="mr-2 h-4 w-4" />
+                <Download className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:-translate-y-1" />
                 Download CV
               </Button>
 
               <Button variant="secondary">
+                <FaGithub className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
                GitHub
              </Button>
             </div>
