@@ -16,7 +16,7 @@ const pods = [
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-slate-950 py-24 lg:py-32">
+    <section className="relative flex min-h-screen items-center overflow-hidden bg-slate-950 py-24">
       {/* Background Glow */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.08),transparent_45%)]" />
 
