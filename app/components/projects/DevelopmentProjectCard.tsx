@@ -57,11 +57,17 @@ export default function DevelopmentProjectCard({
       </div>
 
       <div className="mt-10 flex flex-wrap gap-4">
-        <Button>Architecture</Button>
+        <Button disabled>
+          Architecture
+          </Button>
 
-        <Button variant="outline">GitHub</Button>
+        <Button variant="outline" disabled>
+          GitHub
+          </Button>
 
-        <Button variant="secondary">Case Study</Button>
+        <Button variant="secondary" disabled>
+          Case Study
+          </Button>
       </div>
     </div>
   );

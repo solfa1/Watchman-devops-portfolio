@@ -16,9 +16,9 @@ export const featuredProject = {
     "PostgreSQL",
   ],
   links: {
-    github: "https://github.com/solfa1",
+    github: "https://github.com/solfa1/Taskflow",
     architecture: "#",
-    caseStudy: "#",
+    caseStudy: "/blog/building-taskflow",
   },
 };
 

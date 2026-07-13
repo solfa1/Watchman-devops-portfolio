@@ -38,13 +38,21 @@ export default function FeaturedProjectCard() {
       <div className="mt-10 flex flex-wrap gap-4">
         <Button>Architecture</Button>
 
-        <Button variant="outline">
-          GitHub
-        </Button>
+        <Button asChild variant="outline">
+  <a
+    href={featuredProject.links.github}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    GitHub
+  </a>
+</Button>
 
-        <Button variant="secondary">
-          Case Study
-        </Button>
+        <Button asChild variant="secondary">
+  <a href={featuredProject.links.caseStudy}>
+    Case Study
+  </a>
+</Button>
       </div>
     </div>
   );

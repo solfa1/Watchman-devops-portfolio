@@ -1,6 +1,6 @@
 "use client";
 
-import { Download, ArrowRight } from "lucide-react";
+import { ArrowRight, BookOpen } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import Button from "../ui/Button";
 import Container from "../ui/Container";
@@ -60,20 +60,30 @@ export default function Hero() {
             </div>
 
             <div className="mt-12 flex flex-wrap gap-4">
-              <Button>
-                View Projects
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </Button>
+              <Button asChild>
+  <a href="#projects" className="inline-flex items-center gap-2">
+    <span>View Projects</span>
+    <ArrowRight className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
+  </a>
+</Button>
 
-              <Button variant="outline">
-                <Download className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:-translate-y-1" />
-                Download CV
-              </Button>
-
-              <Button variant="secondary">
-                <FaGithub className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
-               GitHub
+              <Button asChild variant="outline">
+               <a href="/blog">
+               <BookOpen className="mr-2 h-4 w-4" />
+                Read My Blog
+               </a>
              </Button>
+
+              <Button asChild variant="secondary">
+  <a
+    href="https://github.com/solfa1"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <FaGithub className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
+    GitHub
+  </a>
+</Button>
             </div>
           </div>
 
