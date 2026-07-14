@@ -1,6 +1,6 @@
 export const contact = {
   email: "Watchmanokoro@gmail.com",
-  linkedin: "www.linkedin.com/in/watchman-okoro-5164493ba",
+  linkedin: "https://www.linkedin.com/in/watchman-okoro-5164493ba",
   github: "https://github.com/solfa1",
   location: "Nigeria",
   availability: "Open to remote opportunities",
