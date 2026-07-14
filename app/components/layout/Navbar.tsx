@@ -42,9 +42,15 @@ export default function Navbar() {
           </div>
 
           {/* CTA */}
-          <Button size="sm">
-            Download CV
-          </Button>
+          {/* CTA */}
+<Button asChild size="sm">
+  <a
+    href="/Watchman-Okoro-Devops-Cv.pdf"
+    download="Watchman-Okoro-Devops-Cv.pdf"
+  >
+    Download CV
+  </a>
+</Button>
         </nav>
       </Container>
     </header>
