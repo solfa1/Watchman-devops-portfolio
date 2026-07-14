@@ -4,6 +4,7 @@ import About from "./components/sections/About";
 import Projects from "./components/sections/Projects";
 import EngineeringStack from "./components/sections/EngineeringStack";
 import Contact from "@/app/components/sections/contact";
+import Footer from "@/app/components/layout/Footer";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Projects />
       <EngineeringStack />
       <Contact />
+      <Footer />
     </>
   );
 }
